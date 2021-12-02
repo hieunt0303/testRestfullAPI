@@ -1,3 +1,4 @@
+const dotenv = require("dotenv").config();
 const express = require('express')
 const path = require('path');
 const route = require('./src/routes')
@@ -8,7 +9,7 @@ const helmet = require("helmet");
 const port = process.env.PORT || 3004
 const db = require('./src/config/db')
 db.connect()
-
+console.log(process.env)
 app.use(express.static(path.join(__dirname, 'src', 'public')))
 console.log(__dirname)
 
